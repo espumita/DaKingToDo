@@ -1,18 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace DaKingToDo.Business
 {
-    public class ToDoList : IEnumerable<string>
+    public class ToDoList : IEnumerable<Task>
     {
-        private List<string> list;
+        private List<Task> list;
 
         public ToDoList()
         {
-            list = new List<string>();
+            list = new List<Task>();
         }
 
-        public IEnumerator<string> GetEnumerator()
+        public IEnumerator<Task> GetEnumerator()
         {
             return list.GetEnumerator();
         }
@@ -21,5 +22,10 @@ namespace DaKingToDo.Business
         {
             return GetEnumerator();
         }
-    }
+
+        public void add(Task task)
+        {
+            list.Add(task);
+        }
+     }
 }

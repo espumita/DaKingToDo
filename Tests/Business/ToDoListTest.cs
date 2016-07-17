@@ -6,7 +6,6 @@ namespace Tests.Business
 {
     [TestFixture]
     public class ToDoListTest
-        //ToDoList Constructor test
         //add task to the list
         //delete task from the list
     {
@@ -17,5 +16,18 @@ namespace Tests.Business
 
             list.Should().BeEmpty();
         }
+
+
+        [Test]
+        public void when_add_a_Task_ToDoList_should_be_modified()
+        {
+            var list = new ToDoList();
+            var task = new Task();
+
+            list.add(task);
+
+            list.Should().Contain(task);
+        }
+
     }
 }
