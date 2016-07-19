@@ -7,14 +7,22 @@ namespace Tests.Business
 {
     [TestFixture]
     public class TaskShould
-        //Dont Create new Task with empty content
-        //Dont Create new Task with null content
     {
 
         [Test]
         public void not_be_created_with_an_empty_content()
         {
             Action createTask = () => new Task("");
+
+            createTask.ShouldThrow<CannotCreateAnEmptyTaskException>();
+        }
+
+
+        [Test]
+        public void not_be_created_with_a_null_content()
+        {
+            Action createTask = () => new Task(null);
+
             createTask.ShouldThrow<CannotCreateAnEmptyTaskException>();
         }
 
