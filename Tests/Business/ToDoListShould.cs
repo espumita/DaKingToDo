@@ -5,12 +5,12 @@ using NUnit.Framework;
 namespace Tests.Business
 {
     [TestFixture]
-    public class ToDoListTest
+    public class ToDoListShould
         //add task to the list
         //delete task from the list
     {
         [Test]
-        public void when_we_create_an_ToDoList_instance_it_is_empty()
+        public void be_empty_when_create_new_one()
         {
             var list = new ToDoList();
 
@@ -19,7 +19,7 @@ namespace Tests.Business
 
 
         [Test]
-        public void when_add_a_Task_ToDoList_should_be_modified()
+        public void contain_a_task_when_it_is_added()
         {
             var list = new ToDoList();
             var task = new Task();
