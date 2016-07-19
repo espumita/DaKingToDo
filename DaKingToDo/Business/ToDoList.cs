@@ -23,7 +23,7 @@ namespace DaKingToDo.Business
             return GetEnumerator();
         }
 
-        public void add(Task task)
+        public void Add(Task task)
         {
             list.Add(task);
         }
