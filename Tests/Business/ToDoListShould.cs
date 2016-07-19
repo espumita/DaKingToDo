@@ -22,7 +22,7 @@ namespace Tests.Business
         public void contain_a_task_when_it_is_added()
         {
             var list = new ToDoList();
-            var task = new Task();
+            var task = new Task("Something");
 
             list.add(task);
 

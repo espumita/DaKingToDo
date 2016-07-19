@@ -68,6 +68,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Business\TaskShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Business\ToDoListShould.cs" />
   </ItemGroup>

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Exceptions\CannotCreateAnEmptyTaskException.cs" />
     <Compile Include="Business\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Business\ToDoList.cs" />
