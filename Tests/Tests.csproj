@@ -71,6 +71,7 @@
     <Compile Include="Business\TaskShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Business\ToDoListShould.cs" />
+    <Compile Include="Service\TaskServiceShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,6 +82,7 @@
       <Name>DaKingToDo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
