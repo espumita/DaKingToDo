@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Tests.Business;
 
 namespace DaKingToDo.Business
 {
@@ -30,7 +30,10 @@ namespace DaKingToDo.Business
 
         public void Remove(Task task)
         {
-            list.Remove(task);
+            if (!list.Remove(task))
+            {
+                throw new CannotDeleteAnNonExistentTaskException();
+            }
         }
     }
 }

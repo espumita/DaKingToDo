@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace DaKingToDo.Business
+namespace DaKingToDo.Business.Exceptions
 {
     [Serializable]
     public class CannotCreateAnEmptyTaskException : Exception

@@ -1,5 +1,6 @@
 ﻿using System;
 using DaKingToDo.Business;
+using DaKingToDo.Business.Exceptions;
 using FluentAssertions;
 using NUnit.Framework;
 

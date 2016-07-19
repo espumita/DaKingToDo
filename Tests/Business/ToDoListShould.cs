@@ -1,4 +1,5 @@
-﻿using DaKingToDo.Business;
+﻿using System;
+using DaKingToDo.Business;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -6,7 +7,6 @@ namespace Tests.Business
 {
     [TestFixture]
     public class ToDoListShould
-        //delete task from the list
     {
         [Test]
         public void be_empty_when_create_new_one()
@@ -40,5 +40,17 @@ namespace Tests.Business
             toDoList.Should().BeEmpty();
         }
 
+        [Test]
+        public void not_delete_a_not_contained_task()
+        {
+            var toDoList = new ToDoList();
+            var task = new Task("Something");
+
+            Action deleteTask = () => toDoList.Remove(task);
+
+            deleteTask.ShouldThrow<CannotDeleteAnNonExistentTaskException>();
+        }
+
     }
+
 }
