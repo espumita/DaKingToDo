@@ -27,5 +27,10 @@ namespace DaKingToDo.Business
         {
             list.Add(task);
         }
-     }
+
+        public void Remove(Task task)
+        {
+            list.Remove(task);
+        }
+    }
 }
