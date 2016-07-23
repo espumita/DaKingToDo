@@ -4,22 +4,25 @@ namespace DaKingToDo.API
 {
     public class Parser
     {
-        private ToDoList data;
+        private ToDoList toDoList;
 
-        public Parser(ToDoList data)
+        public Parser(ToDoList toDoList)
         {
-            this.data = data;
+            this.toDoList = toDoList;
         }
 
 
         public string ToJson()
         {
-            var json = "{\"ToDoList\":[";
-            foreach (var task in data)
+            var prejson = "{\"ToDoList\":[";
+            var json = "";
+
+            foreach (var task in toDoList)
             {
-                json += "{" + "\"content\":\"" + task.content + "\"}";
+                json += "{" + "\"content\":\"" + task.content + "\"},";
             }
-            return json + "]}";
+            if(json.Length > 0) json = json.Substring(0, json.Length - 1);
+            return prejson + json + "]}";
         }
     }
 }

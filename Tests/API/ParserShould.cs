@@ -30,5 +30,16 @@ namespace Tests.API
             json.Should().BeEquivalentTo("{\"ToDoList\":[{\"content\":\"something\"}]}");
         }
 
+        [Test]
+        public void return_a_JSON_of_a_ToDoList_object_with_more_than_one_Task()
+        {
+            var toDoList = new ToDoList { new Task("something"), new Task("anything") };
+            var parser = new Parser(toDoList);
+
+            var json = parser.ToJson();
+
+            json.Should().BeEquivalentTo("{\"ToDoList\":[{\"content\":\"something\"},{\"content\":\"anything\"}]}");
+        }
+
     }
 }
