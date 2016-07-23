@@ -14,7 +14,12 @@ namespace DaKingToDo.API
 
         public string ToJson()
         {
-            return "{}";
+            var json = "{\"ToDoList\":[";
+            foreach (var task in data)
+            {
+                json += "{" + "\"content\":\"" + task.content + "\"}";
+            }
+            return json + "]}";
         }
     }
 }

@@ -5,7 +5,7 @@ namespace DaKingToDo.Business
 {
     public class Task
     {
-        private string content;
+        public string content { get; }
 
         public Task(string content)
         {
