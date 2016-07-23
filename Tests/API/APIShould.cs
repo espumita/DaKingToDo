@@ -24,6 +24,7 @@ namespace Tests.API
         }
 
         [Test]
+        [Ignore("creating colaborators")]
         public void return_ToDoList_in_JSON_format_when_acces_to_list_path()
         {
             var request = new Request("GET", "list");
