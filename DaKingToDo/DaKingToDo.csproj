@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NSubstitute, Version=1.10.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSubstitute.1.10.0.0\lib\net45\NSubstitute.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Parser.cs" />
+    <Compile Include="API\Request.cs" />
+    <Compile Include="Infraestructure\SQLTaskRepo.cs" />
     <Compile Include="Business\Exceptions\CannotCreateAnEmptyTaskException.cs" />
     <Compile Include="Business\Exceptions\CannotDeleteAnNonExistentTaskException.cs" />
     <Compile Include="Business\Task.cs" />
@@ -47,6 +54,9 @@
     <Compile Include="Business\ToDoList.cs" />
     <Compile Include="Services\TaskRepository.cs" />
     <Compile Include="Services\TaskService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
