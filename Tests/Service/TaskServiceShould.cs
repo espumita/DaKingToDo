@@ -19,13 +19,13 @@ namespace Tests.Service
         }
 
         [Test]
-        public void return_a_ToDoList_when_load_method_is_called()
+        public void return_an_empty_ToDoList_when_the_repository_is_empty_and_load_method_is_called()
         {
             var service = new TaskService(repo);
 
             var toDoList = service.Load();
 
-            toDoList.Should().BeEmpty();
+            toDoList.Should().BeOfType<ToDoList>();
         }
     }
 }
