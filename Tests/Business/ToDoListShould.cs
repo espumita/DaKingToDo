@@ -41,7 +41,7 @@ namespace Tests.Business
         }
 
         [Test]
-        public void not_delete_a_not_contained_task()
+        public void trow_and_exception_when_try_to_delete_a_non_existent_Task()
         {
             var toDoList = new ToDoList();
             var task = new Task("Something");
