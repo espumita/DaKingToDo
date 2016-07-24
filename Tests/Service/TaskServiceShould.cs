@@ -25,7 +25,7 @@ namespace Tests.Service
 
             var toDoList = service.Load();
 
-            toDoList.Should().BeOfType<ToDoList>();
+            toDoList.Should().BeEmpty();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace DaKingToDo.API
 
             foreach (var task in toDoList)
             {
-                json += "{" + "\"content\":\"" + task.content + "\"},";
+                json += "{" + "\"content\":\"" + task.Content + "\"},";
             }
             if(json.Length > 0) json = json.Substring(0, json.Length - 1);
             return prejson + json + "]}";

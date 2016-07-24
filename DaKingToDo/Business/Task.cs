@@ -5,7 +5,7 @@ namespace DaKingToDo.Business
 {
     public class Task
     {
-        public string content { get; }
+        public string Content { get; }
 
         public Task(string content)
         {
@@ -13,7 +13,7 @@ namespace DaKingToDo.Business
             {
                 throw new CannotCreateAnEmptyTaskException();
             }
-            this.content = content;
+            this.Content = content;
         }
     }
 }
