@@ -1,4 +1,5 @@
-﻿using DaKingToDo.Business;
+﻿using System.Collections.Generic;
+using DaKingToDo.Business;
 
 namespace DaKingToDo.Services
 {
@@ -11,9 +12,15 @@ namespace DaKingToDo.Services
             this.taskRepository = taskRepository;
         }
 
-        public ToDoList Load()
+        public List<Task> Load()
         {
-            return taskRepository.Load();
+            var toDoList = taskRepository.Load();
+            List<Task> list = new List<Task>();
+            foreach (var task in toDoList)
+            {
+                list.Add(task);
+            }
+            return list;
         }
     }
 }

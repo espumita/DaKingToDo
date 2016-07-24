@@ -1,14 +1,15 @@
-﻿using DaKingToDo.Business;
+﻿using System.Collections.Generic;
+using DaKingToDo.Business;
 
 namespace DaKingToDo.API
 {
     public class Parser
     {
-        private ToDoList toDoList;
+        private List<Task> list;
 
-        public Parser(ToDoList toDoList)
+        public Parser(List<Task> list)
         {
-            this.toDoList = toDoList;
+            this.list = list;
         }
 
 
@@ -17,7 +18,7 @@ namespace DaKingToDo.API
             var prejson = "{\"ToDoList\":[";
             var json = "";
 
-            foreach (var task in toDoList)
+            foreach (var task in list)
             {
                 json += "{" + "\"content\":\"" + task.Content + "\"},";
             }
