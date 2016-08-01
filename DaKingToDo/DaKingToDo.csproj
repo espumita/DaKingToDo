@@ -44,8 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\Parser.cs" />
-    <Compile Include="API\Request.cs" />
     <Compile Include="Infraestructure\SQLTaskRepo.cs" />
     <Compile Include="Business\Exceptions\CannotCreateAnEmptyTaskException.cs" />
     <Compile Include="Business\Exceptions\CannotDeleteAnNonExistentTaskException.cs" />
