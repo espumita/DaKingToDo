@@ -15,15 +15,15 @@ namespace Tests.Service
 
 
         [Test]
-        public void return_an_empty_ToDoList_when_the_repository_is_empty_and_load_method_is_called()
+        public void return_an_empty_Task_list_when_the_repository_is_empty_and_load_method_is_called()
         {
             repo = Substitute.For<TaskRepository>();
             repo.Load().Returns(new ToDoList());
             var service = new TaskService(repo);
 
-            var toDoList = service.Load();
+            var tasksList = service.Load();
 
-            toDoList.Should().BeOfType<List<Task>>();
+            tasksList.Should().BeEmpty();
         }
 
         [Test]
