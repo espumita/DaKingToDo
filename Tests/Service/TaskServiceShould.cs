@@ -11,29 +11,33 @@ namespace Tests.Service
     [TestFixture]
     public class TaskServiceShould
     {
-        private TaskRepository repo;
+        private TaskRepository repository;
+        private TaskService service;
 
+        [SetUp]
+        public void SetUp()
+        {
+            repository = Substitute.For<TaskRepository>();
+            service = new TaskService(repository);
+        }
 
         [Test]
         public void return_an_empty_Task_list_when_the_repository_is_empty_and_load_method_is_called()
         {
-            repo = Substitute.For<TaskRepository>();
-            repo.Load().Returns(new ToDoList());
-            var service = new TaskService(repo);
+            repository.Load().Returns(new ToDoList());
 
             var tasksList = service.Load();
 
             tasksList.Should().BeEmpty();
         }
 
+
         [Test]
         public void return_a_list_of_Task_when_load_method_is_called()
         {
-            repo = Substitute.For<TaskRepository>();
             var toDoList = new ToDoList();
-            repo.Load().Returns(toDoList);
+            repository.Load().Returns(toDoList);
             toDoList.Add(new Task("Something"));
-            var service = new TaskService(repo);
 
             var listOfTasks = service.Load();
 
