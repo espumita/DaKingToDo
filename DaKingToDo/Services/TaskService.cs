@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DaKingToDo.Business;
 
 namespace DaKingToDo.Services
@@ -14,13 +15,7 @@ namespace DaKingToDo.Services
 
         public List<Task> Load()
         {
-            var toDoList = taskRepository.Load();
-            List<Task> list = new List<Task>();
-            foreach (var task in toDoList)
-            {
-                list.Add(task);
-            }
-            return list;
+            return taskRepository.Load().ToList();
         }
     }
 }
