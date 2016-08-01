@@ -35,14 +35,11 @@ namespace Tests.Service
         [Test]
         public void return_a_list_of_Task_when_load_method_is_called()
         {
-            var toDoList = new ToDoList();
-            repository.Load().Returns(toDoList);
-            toDoList.Add(new Task("Something"));
+            repository.Load().Returns(new ToDoList {new Task("Something")});
 
             var listOfTasks = service.Load();
 
-            var expectedList = new List<Task> {new Task("Something")};
-            listOfTasks.ShouldBeEquivalentTo(expectedList);
+            listOfTasks.ShouldBeEquivalentTo(new List<Task> {new Task("Something")});
         }
 
     }
