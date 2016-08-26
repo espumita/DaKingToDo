@@ -11,5 +11,10 @@ namespace DaKingToDo.Infraestructure
         {
             return toDoList;
         }
+
+        public void Add(Task newTask)
+        {
+            toDoList.Add(newTask);
+        }
     }
 }
