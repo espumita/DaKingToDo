@@ -42,5 +42,15 @@ namespace Tests.Service
             listOfTasks.ShouldBeEquivalentTo(new List<Task> {new Task("Something")});
         }
 
+        [Test]
+        public void call_repository_add_method_with_the_given_task()
+        {
+            var task = new Task("test");
+            
+            service.Add(task);
+
+            repository.Received().Add(task);
+        }
+
     }
 }

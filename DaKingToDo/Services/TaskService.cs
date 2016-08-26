@@ -17,5 +17,10 @@ namespace DaKingToDo.Services
         {
             return taskRepository.Load().ToList();
         }
+
+        public void Add(Task newTask)
+        {
+            taskRepository.Add(newTask);
+        }
     }
 }
